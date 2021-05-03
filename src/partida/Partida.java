@@ -1,8 +1,10 @@
 package partida;
 
+import agentes.Cartas_comunidad;
 import agentes.Casilla;
 import agentes.Jugador;
 import agentes.Tablero;
+import agentes.Suerte;
 import utiles.Util;
 
 import java.util.Scanner;
@@ -58,11 +60,11 @@ public class Partida {
 		} else if (nombreCasilla.contains("Estacion")) {
 			Casilla.estacion(idCasilla, nombreCasilla, jugadorActual);
 		} else if (nombreCasilla.equals("Salida")) {
-			
+			jugadorActual.aumentarDinero(100);
 		} else if (nombreCasilla.equals("Caja comunitaria")) {
-			
+			Cartas_comunidad.llamarCaja(jugadorActual);
 		} else if (nombreCasilla.equals("Suerte")) {
-			
+			Suerte.llamarSuerte(jugadorActual);
 		} else if (nombreCasilla.equals("Carcel")) {
 			
 		} else if (nombreCasilla.equals("Compania electricidad")) {
